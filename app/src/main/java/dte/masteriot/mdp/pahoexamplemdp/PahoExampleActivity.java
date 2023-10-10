@@ -94,6 +94,7 @@ public class PahoExampleActivity extends AppCompatActivity {
 
         MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
         mqttConnectOptions.setAutomaticReconnect(true);
+        mqttConnectOptions.setWill(publishTopic, lastWillMessage.getBytes(),1, true);
         //mqttConnectOptions.setCleanSession(false);
         mqttConnectOptions.setCleanSession(true);
 
